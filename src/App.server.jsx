@@ -52,6 +52,7 @@ function App({request}) {
             <FileRoutes
               basePath={countryCode ? `/${countryCode}/` : undefined}
             />
+            <Route path="/mypost" page={<MyPost />} />
             <Route path="*" page={<NotFound />} />
           </Router>
         </CartProvider>
@@ -61,6 +62,10 @@ function App({request}) {
       </ShopifyProvider>
     </Suspense>
   );
+}
+
+function MyPost() {
+  return <h1>My Post</h1>;
 }
 
 export default renderHydrogen(App);
